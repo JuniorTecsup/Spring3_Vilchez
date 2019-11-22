@@ -15,5 +15,10 @@ public interface EnfermedadService {
 	public void save(Enfermedad enfermedad);
 	
 	public void deleteById(Long id);
+    
+	//public void updateById(Long id);
+	
+	
+
 	
 }

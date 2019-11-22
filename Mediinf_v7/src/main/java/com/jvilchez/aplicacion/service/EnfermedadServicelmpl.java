@@ -3,13 +3,16 @@ package com.jvilchez.aplicacion.service;
 import java.util.List;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.jvilchez.aplicacion.entity.Enfermedad;
 import com.jvilchez.aplicacion.repository.EnfermedadRepository;
-//import com.jvilchez.aplicacion.service.EnfermedadService;
 
+@Service
+@Transactional
 public class EnfermedadServicelmpl implements EnfermedadService{
 	
 	@Autowired

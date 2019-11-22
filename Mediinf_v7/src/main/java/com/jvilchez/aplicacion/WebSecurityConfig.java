@@ -25,7 +25,7 @@ public class WebSecurityConfig  extends  WebSecurityConfigurerAdapter{
     	http
         .authorizeRequests()
         .antMatchers(resources).permitAll()  
-        .antMatchers("/","/index","/signup","/enfermedades/lista","/enfermedades/nuevo","/enfermedades/crear","/enfermedades/editar/{id}","/enfermedades/actualizar","/enfermedades/borrar/{id}","/api").permitAll()
+        .antMatchers("/","/index","/signup","/enfermedades/lista","/enfermedades/nuevo","/enfermedades/crear","/enfermedades/editar/{id}","/enfermedades/actualizar","/enfermedades/borrar/{id}","/api/enfermedades","/api/enfermedad/{id}","/api/enfermedad/crear","/api/enfermedad/eliminar/{id}","/api/enfermedad/editar/{id}").permitAll()
             .anyRequest().authenticated()
             .and()
         .formLogin()
