@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" 
+        href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+<script 
+        src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<title>Mediinf Registrar</title>
+</head>
+<body>
+     <div class="page-header">
+         <h1>Registar</h1>
+     </div>
+     
+        <form action="#" th:action="@{/enfermedades/crear}" th:object="${enfermedad}" method="post">
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="nombre" id="nombre" placeholder="nombre.." required="required" />
+                  <p th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina General</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_g" id="medicamento_g" placeholder="Medicamento general" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_g')}" th:errors="*{medicamento_g}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina de Laboratorio</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_l" id="medicamento_l" placeholder="Medicamento de Laboratorio" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_l')}" th:errors="*{medicamento_l}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina Natural</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_n" id="medicamento_n" placeholder="Medicamento Natural" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_n')}" th:errors="*{medicamento_n}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Sintomas</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="sintomas" id="sintomas" placeholder="Describir sintomas" required="required" />
+                  <p th:if="${#fields.hasErrors('sintomas')}" th:errors="*{sintomas}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Apto</label>
+             <div class="col-sm-10">
+                  <select class="form-control" name="apto" id="apto">
+                      <option value="Niños">Niños</option>
+                      <option value="Adultos">Adultos</option>
+                      <option value="Niños y Adultos">Niños y Adultos</option>
+                   </select>
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Imagen</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="enfermedad_img" id="enfermedad_img" placeholder="Nommbre de archivo" required="required" /> 
+             
+             </div>
+        </div>
+     
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                 <button type="submit" class="btn btn-default">Crear</button><a class="btn btn-info" href="/enfermedades/lista">Volver</a>
+            </div>
+        </div>
+        </form>
+</body>
+</html>

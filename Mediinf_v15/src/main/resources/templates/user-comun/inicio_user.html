@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/justified-nav/">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <div class="masthead">
+        <h2 align="center">Mediinf</h2>
+        <nav>
+          <ul class="nav nav-justified">
+            <li class="active"><a href="/enfermedades/listauser" style="margin-right: 10px;">Inicio</a></li>
+            <li><a href="/userForm" style="margin-right: 10px;">Cuenta</a></li>
+            <li><a href="/enfermedades/lista" style="margin-right: 10px;">Enfermedades</a></li>
+            <li><a href="/userForm" style="margin-right: 10px;">Usuarios</a></li>
+          </ul>
+        </nav>
+      </div>
+      
+      
+      <tbody>
+      <tr th:each="enfermedad: ${enfermedades}">
+      <div class="jumbotron">
+        <h2><td th:text="${enfermedad.nombre}"></td></h2>
+        <div><th><img th:src="@{/img/enfermedades/} + ${enfermedad.enfermedad_img}" style="margin-right: 25px;"/></th>
+        <th><p>Esta enfermedad acata naturalmente en un clima frio</p></th></div>
+      </div>
+
+      <div class="row"> 
+        <div class="col-lg-4">
+          <h2>Medicina General</h2>
+          <div><th><img th:src="@{/img/medicamentos/} + ${enfermedad.medi_g}" style="margin-right: 25px;" width="250" height="250"/></th></div>
+          <td th:text="${enfermedad.medicamento_g}"></td>
+          <div></div>
+          <p><a class="btn btn-primary" href="#" role="button">Ver más</a></p>
+        </div>
+        <div class="col-lg-4">
+          <h2>Medicina de Laboratorio</h2>
+          <div><th><img th:src="@{/img/medicamentos/} + ${enfermedad.medi_l}" style="margin-right: 25px;" width="250" height="250"/></th></div>
+          <td th:text="${enfermedad.medicamento_l}"></td>
+          <td></td>
+          <p><a class="btn btn-primary" href="#" role="button">Ver más</a></p>
+       </div>
+        <div class="col-lg-4">
+          <h2>Medicina Natural</h2>
+          <div><th><img th:src="@{/img/medicamentos/} + ${enfermedad.medi_n}" style="margin-right: 25px;" width="250" height="250"/></th></div>
+          <td th:text="${enfermedad.medicamento_n}"></td>
+          <td></td>
+          <p><a class="btn btn-primary" href="#" role="button">Ver más</a></p>
+        </div>
+      </div>
+      </tbody>
+      </div>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" 
+        href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+<script 
+        src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<title>Lista:: CRUD</title>
+</head>
+<body>
+      
+      <div class="panel panel-info">
+          <div class="panel-heading"><h3>Lista de Enfermedades</h3></div>
+          <table class="table table-striped">
+             <thead>
+                  <tr>
+                      <th>Id</th>
+                      <th>Nombre</th>
+                      <th>Medicamento General</th>
+                      <th>Medicamento de Laboratorio</th>
+                      <th>Medicamento Natural</th>
+                      <th>Sintomas</th>
+                      <th>Apto</th>
+                      <th>Editar</th>
+                      <th>Eliminar</th>
+                  </tr>
+             </thead>
+             <tbody>
+                  <tr data-th-each="enfermedad : ${enfermedades}">
+                      <td data-th-text="${enfermedad.id}"></td>
+                      <td data-th-text="${enfermedad.nombre}"></td>
+                      <td data-th-text="${enfermedad.medicamento_g}"></td>
+                      <td data-th-text="${enfermedad.medicamento_l}"></td> 
+                      <td data-th-text="${enfermedad.medicamento_n}"></td>
+                      <td data-th-text="${enfermedad.sintomas}"></td>
+                      <td data-th-text="${enfermedad.apto}"></td> 
+                      
+                      <td>
+                          <a th:href="@{'/enfermedades/editar/{id}'(id=${enfermedad.id})}">
+                               <span class="fa-stack">
+                                 <i class="glyphicon glyphicon-edit"></i>
+                               </span>
+                           </a>
+                      </td>
+                      
+                      <td>
+                           <a th:href="@{'/enfermedades/borrar/{id}'(id=${enfermedad.id})}">
+                               <span class="fa-stack">
+                                 <i class="glyphicon glyphicon-trash"></i>
+                               </span>
+                           </a>
+                      </td>
+                      
+                  </tr>  
+             </tbody>
+          </table>
+      </div>
+      <br/>
+      <a class="btn btn-info" href="/enfermedades/nuevo">Registrar nueva enfermedad</a><br><br>
+      <a class="btn btn-info" href="/enfermedades/listauser">Ir a la pagina principal</a>
+</body>
+</html>
+

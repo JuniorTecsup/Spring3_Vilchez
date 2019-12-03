@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" 
+        href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"/>
+<script 
+        src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<title>Editar</title>
+</head>
+<body>
+     <div class="page-header">
+         <h1>Nuevo Usuario</h1>
+     </div>
+        <form action="#" th:action="@{/enfermedades/actualizar}" th:object="${enfermedad}" method="post">
+           <input type="hidden" id="id" name="id" th:field="*{id}" />
+        
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="nombre" id="nombre" th:field="*{nombre}" required="required" />
+                  <p th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina General</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_g" id="medicamento_g" th:field="*{medicamento_g}" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_g')}" th:errors="*{medicamento_g}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina de Laboratorio</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_l" id="medicamento_l" th:field="*{medicamento_l}" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_l')}" th:errors="*{medicamento_l}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Medicina Natural</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="medicamento_n" id="medicamento_n" th:field="*{medicamento_n}" required="required" />
+                  <p th:if="${#fields.hasErrors('medicamento_n')}" th:errors="*{medicamento_n}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Sintomas</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="sintomas" id="sintomas" th:field="*{sintomas}" required="required" />
+                  <p th:if="${#fields.hasErrors('sintomas')}" th:errors="*{sintomas}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Apto</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="apto" id="apto" th:field="*{apto}" required="required" />
+                  <p th:if="${#fields.hasErrors('apto')}" th:errors="*{apto}" class="alert alert-danger" />
+             </div>
+        </div>
+        
+        <div class="form-group">
+             <label for="nombre" class="col-sm-2 control-label">Imagen</label>
+             <div class="col-sm-10">
+                  <input type="text" class="form-control" name="enfermedad_img" id="enfermedad_img" th:field="*{enfermedad_img}" required="required" />
+                  <p th:if="${#fields.hasErrors('enfermedad_img')}" th:errors="*{enfermedad_img}" class="alert alert-danger" />
+             </div>
+        </div> 
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                 <button type="submit" class="btn btn-default">Actualizar</button>
+            </div>
+        </div>
+        </form>
+</body>
+</html>l>
