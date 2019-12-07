@@ -4,8 +4,10 @@ package com.jvilchez.aplicacion.controller;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,13 +22,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.jvilchez.aplicacion.entity.Enfermedad;
-
 import com.jvilchez.aplicacion.service.EnfermedadService;
 
 @RestController
 @RequestMapping("/api")
 public class EnfermedadApiController {
     
+	private static final Logger logger = LoggerFactory.getLogger(EnfermedadController.class);
+	
+	@Value("${app.storage.path}")
 	private String STORAGEPATH;
 	
 	//Regenerar con todo y storage ..word
@@ -61,7 +65,7 @@ public class EnfermedadApiController {
 			
 			@PostMapping("/insertar")
 			public Enfermedad crear(@RequestParam(name="enfermedad_img", required=false) MultipartFile enfermedad_img, @RequestParam("nombre") String nombre, @RequestParam("sintomas") String sintomas, @RequestParam("apto") String apto, @RequestParam("medicamento_g") String medicamento_g, @RequestParam("medicamento_l") String medicamento_l, @RequestParam("medicamento_n") String medicamento_n, @RequestParam("medi_g") String medi_g, @RequestParam("medi_l") String medi_l, @RequestParam("medi_n") String medi_n) throws Exception {
-				//logger.info("call crear(" + nombre + ", " + precio + ", " + detalles + ", " + imagen + ")");
+				logger.info("call crear(" + nombre + ", " + apto + ", " + sintomas + ", " + medicamento_g + ", " + medicamento_l + ", " + medicamento_n + ", " + medi_g + ", " + medi_l + ", " + medi_n + ", " + enfermedad_img + ")");
 				
 				Enfermedad enfermedad = new Enfermedad();
 				enfermedad.setNombre(nombre);
